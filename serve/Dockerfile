@@ -3,6 +3,7 @@ FROM oven/bun:1 AS builder
 WORKDIR /app
 
 COPY package.json bun.lock ./
+COPY patches/ patches/
 COPY packages/ packages/
 RUN bun ci
 
