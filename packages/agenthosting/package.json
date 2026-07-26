@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "bun run --conditions=browser ./src/index.ts",
-    "typecheck": "tsgo --noEmit",
+    "typecheck": "echo 'thin wrapper — typechecked via @mimo-ai/cli'",
     "build": "bun run script/build.ts"
   },
   "bin": {
