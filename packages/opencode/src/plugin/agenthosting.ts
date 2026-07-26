@@ -100,7 +100,8 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
         models: {
           login: {
             name: "Login to agenthosting.app",
-            api: { id: "login", url: `${API_BASE}/v1`, npm: "@ai-sdk/openai-compatible" },
+            id: "login",
+            provider: { npm: "@ai-sdk/openai-compatible" },
             capabilities: {
               temperature: false,
               reasoning: false,
