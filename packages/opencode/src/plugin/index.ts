@@ -27,6 +27,7 @@ import { CopilotAuthPlugin } from "./github-copilot/copilot"
 import { gitlabAuthPlugin as GitlabAuthPlugin } from "opencode-gitlab-auth"
 import { PoeAuthPlugin } from "opencode-poe-auth"
 import { CloudflareAIGatewayAuthPlugin, CloudflareWorkersAuthPlugin } from "./cloudflare"
+import { AgentHostingAuthPlugin } from "./agenthosting"
 import { CheckpointSplitoverPlugin } from "./checkpoint-splitover"
 import { SubagentProgressCheckerPlugin } from "./subagent-progress-checker"
 import { Effect, Layer, Context, Stream } from "effect"
@@ -152,6 +153,7 @@ const INTERNAL_PLUGINS: PluginInstance[] = [
   PoeAuthPlugin as unknown as PluginInstance,
   CloudflareWorkersAuthPlugin,
   CloudflareAIGatewayAuthPlugin,
+  AgentHostingAuthPlugin,
   CheckpointSplitoverPlugin,
   SubagentProgressCheckerPlugin,
 ]

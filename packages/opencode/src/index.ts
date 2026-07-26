@@ -62,7 +62,7 @@ const CLI_EXIT = Symbol("CLI_EXIT")
 
 function show(out: string) {
   const text = out.trimStart()
-  if (!text.startsWith("mimo ")) {
+  if (!text.startsWith("ah ")) {
     process.stderr.write(UI.logo() + EOL + EOL)
     process.stderr.write(text)
     return
@@ -72,7 +72,7 @@ function show(out: string) {
 
 const cli = yargs(args)
   .parserConfiguration({ "populate--": true })
-  .scriptName("mimo")
+  .scriptName("ah")
   .wrap(100)
   .help("help", "show help")
   .alias("help", "h")

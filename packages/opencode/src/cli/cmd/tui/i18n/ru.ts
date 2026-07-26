@@ -30,7 +30,7 @@ export const dict = {
   "tui.home.placeholder.example.todo": "Исправь TODO в кодовой базе",
   "tui.home.placeholder.example.stack": "Какой технологический стек у этого проекта?",
   "tui.home.placeholder.example.tests": "Почини сломанные тесты",
-  "tui.home.agreement.prefix": "Используя MiMoCode, вы соглашаетесь с нашими ",
+  "tui.home.agreement.prefix": "Используя AgentHosting, вы соглашаетесь с нашими ",
   "tui.home.agreement.terms": "Условиями использования",
   "tui.home.agreement.separator": " и ",
   "tui.home.agreement.privacy": "Политикой конфиденциальности",
@@ -122,9 +122,9 @@ export const dict = {
   "tui.tips.cycle_sessions":
     "Нажимайте {highlight}Ctrl+X Right/Left{/highlight}, чтобы переключаться между родительской и дочерними сессиями",
   "tui.tips.config_files":
-    "Создайте {highlight}mimocode.json{/highlight} для серверных настроек и {highlight}tui.json{/highlight} для настроек TUI",
+    "Создайте {highlight}agenthosting.json{/highlight} для серверных настроек и {highlight}tui.json{/highlight} для настроек TUI",
   "tui.tips.global_config":
-    "Поместите настройки TUI в {highlight}~/.config/mimocode/tui.json{/highlight} как глобальные",
+    "Поместите настройки TUI в {highlight}~/.config/agenthosting/tui.json{/highlight} как глобальные",
   "tui.tips.schema":
     "Добавьте {highlight}$schema{/highlight} в конфиг для автодополнения в редакторе",
   "tui.tips.default_model":
@@ -136,15 +136,15 @@ export const dict = {
   "tui.tips.mcp_config":
     "Настройте локальные или удалённые MCP-серверы в разделе {highlight}mcp{/highlight} конфига",
   "tui.tips.mcp_oauth":
-    "MiMoCode автоматически обрабатывает OAuth для удалённых MCP-серверов с авторизацией",
+    "AgentHosting автоматически обрабатывает OAuth для удалённых MCP-серверов с авторизацией",
   "tui.tips.custom_command":
-    "Добавляйте файлы {highlight}.md{/highlight} в {highlight}.mimocode/command/{/highlight} для повторно используемых пользовательских команд",
+    "Добавляйте файлы {highlight}.md{/highlight} в {highlight}.agenthosting/command/{/highlight} для повторно используемых пользовательских команд",
   "tui.tips.command_args":
     "Используйте {highlight}$ARGUMENTS{/highlight}, {highlight}$1{/highlight}, {highlight}$2{/highlight} в командах для динамического ввода",
   "tui.tips.command_backticks":
     "Используйте обратные кавычки в командах, чтобы вставить вывод shell (например, {highlight}`git status`{/highlight})",
   "tui.tips.custom_agent":
-    "Добавляйте файлы {highlight}.md{/highlight} в {highlight}.mimocode/agent/{/highlight} для специализированных AI-персон",
+    "Добавляйте файлы {highlight}.md{/highlight} в {highlight}.agenthosting/agent/{/highlight} для специализированных AI-персон",
   "tui.tips.agent_perms":
     "Настройте для каждого агента отдельные права на инструменты {highlight}edit{/highlight}, {highlight}bash{/highlight} и {highlight}webfetch{/highlight}",
   "tui.tips.bash_allow":
@@ -154,22 +154,22 @@ export const dict = {
   "tui.tips.bash_ask":
     'Настройте {highlight}"git push": "ask"{/highlight}, чтобы запрашивать подтверждение перед push',
   "tui.tips.formatter":
-    "MiMoCode автоматически форматирует файлы с помощью prettier, gofmt, ruff и других инструментов",
+    "AgentHosting автоматически форматирует файлы с помощью prettier, gofmt, ruff и других инструментов",
   "tui.tips.disable_formatter":
     'Установите {highlight}"formatter": false{/highlight}, чтобы отключить всё авто-форматирование',
   "tui.tips.custom_formatter":
     "Определяйте собственные команды форматирования по расширениям файлов в конфиге",
-  "tui.tips.lsp": "MiMoCode использует LSP-серверы для интеллектуального анализа кода",
+  "tui.tips.lsp": "AgentHosting использует LSP-серверы для интеллектуального анализа кода",
   "tui.tips.custom_tool":
-    "Создавайте файлы {highlight}.ts{/highlight} в {highlight}.mimocode/tools/{/highlight}, чтобы определить новые LLM-инструменты",
+    "Создавайте файлы {highlight}.ts{/highlight} в {highlight}.agenthosting/tools/{/highlight}, чтобы определить новые LLM-инструменты",
   "tui.tips.tool_scripts":
     "Определения инструментов могут вызывать скрипты на Python, Go и других языках",
   "tui.tips.plugins":
-    "Добавляйте файлы {highlight}.ts{/highlight} в {highlight}.mimocode/plugin/{/highlight} для подключения хуков событий",
+    "Добавляйте файлы {highlight}.ts{/highlight} в {highlight}.agenthosting/plugin/{/highlight} для подключения хуков событий",
   "tui.tips.plugin_notify":
     "Используйте плагины, чтобы отправлять системные уведомления при завершении сессий",
   "tui.tips.plugin_protect":
-    "Создайте плагин, который запретит MiMoCode читать чувствительные файлы",
+    "Создайте плагин, который запретит AgentHosting читать чувствительные файлы",
   "tui.tips.run":
     "Используйте {highlight}mimo run{/highlight} для неинтерактивных скриптов",
   "tui.tips.continue":
@@ -179,7 +179,7 @@ export const dict = {
   "tui.tips.format_json":
     "Используйте {highlight}--format json{/highlight} для машинно-читаемого вывода в скриптах",
   "tui.tips.serve":
-    "Запустите {highlight}mimo serve{/highlight} для headless-доступа к API MiMoCode",
+    "Запустите {highlight}mimo serve{/highlight} для headless-доступа к API AgentHosting",
   "tui.tips.attach_server":
     "Используйте {highlight}mimo run --attach{/highlight}, чтобы подключиться к запущенному серверу",
   "tui.tips.upgrade":
@@ -195,7 +195,7 @@ export const dict = {
   "tui.tips.theme_system":
     'Используйте {highlight}"theme": "system"{/highlight}, чтобы соответствовать цветам терминала',
   "tui.tips.theme_files":
-    "Создавайте JSON-файлы тем в каталоге {highlight}.mimocode/themes/{/highlight}",
+    "Создавайте JSON-файлы тем в каталоге {highlight}.agenthosting/themes/{/highlight}",
   "tui.tips.theme_variants":
     "Темы поддерживают тёмные и светлые варианты для обоих режимов",
   "tui.tips.theme_ansi": "Ссылайтесь на ANSI-цвета 0-255 в собственных темах",
@@ -284,14 +284,14 @@ export const dict = {
   "tui.skill.xlsx-official.description": "Создание, редактирование и чтение книг Microsoft Excel (.xlsx)",
   "tui.skill.pdf-official.description": "Создание, редактирование, преобразование и чтение PDF-файлов",
   "tui.skill.pptx-official.description": "Создание, редактирование и чтение презентаций Microsoft PowerPoint (.pptx)",
-  "tui.skill.mimocode.description": "Самодокументация функций, конфигурации и команд MiMoCode",
+  "tui.skill.mimocode.description": "Самодокументация функций, конфигурации и команд AgentHosting",
   "tui.skill.evolve.description": "Перепишите любой свой слой — инструменты, hooks, знания, workflows и даже UI",
   "tui.skill.frontend-design.description": "Руководство по выразительному, осмысленному визуальному дизайну UI",
   "tui.skill.loop.description": "Запланировать запуск промпта с периодичностью",
   "tui.skill.html-to-video-pipeline.description": "Магический инструмент для коротких видео — создавайте короткие видео с помощью HTML",
   "tui.skill.arxiv.description": "Поиск, цитирование, загрузка и отслеживание статей arXiv",
   "tui.skill.skill-creator.description": "Создание, проверка и улучшение skills агента",
-  "tui.skill.drive-mimo.description": "Программное управление другим процессом MiMoCode — headless JSON-события или интерактивный TUI через tmux",
+  "tui.skill.drive-mimo.description": "Программное управление другим процессом AgentHosting — headless JSON-события или интерактивный TUI через tmux",
   "tui.skill.research-paper-writing.description": "Написание, полировка и рецензирование научных статей",
   "tui.skill.codex.description": "Автономный запуск Codex CLI в скриптах, CI, Docker и Kubernetes",
   "tui.skill.claude-code.description": "Делегирование задач программирования Claude Code CLI",
@@ -449,7 +449,7 @@ export const dict = {
   "tui.toast.update_available.confirm": "Доступна новая версия v{{version}}. Обновить сейчас?",
   "tui.toast.update_available.updating": "Обновление до v{{version}}...",
   "tui.toast.update_available.failed": "Не удалось обновить",
-  "tui.toast.update_available.success": "Обновлено до MiMoCode v{{version}}. Пожалуйста, перезапустите приложение.",
+  "tui.toast.update_available.success": "Обновлено до AgentHosting v{{version}}. Пожалуйста, перезапустите приложение.",
   "tui.toast.updated.title": "Автообновление выполнено",
   "tui.toast.updated.message": "Патч применён автоматически: v{{version}}. Перезапустите для использования новой версии. Отключите через autoupdate: false в конфигурации.",
   "tui.toast.native_installer_tip": "Совет: рекомендуется нативный установщик (curl/PowerShell) для лучшего опыта установки и обновления.",

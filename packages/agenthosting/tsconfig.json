@@ -1,0 +1,10 @@
+{
+  "extends": "@tsconfig/bun/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@mimo-ai/cli/*": ["../opencode/src/*"]
+    }
+  },
+  "include": ["src"]
+}

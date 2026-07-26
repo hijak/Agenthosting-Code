@@ -30,7 +30,7 @@ export const dict = {
   "tui.home.placeholder.example.todo": "Corriger un TODO dans le code",
   "tui.home.placeholder.example.stack": "Quelle est la stack technique de ce projet ?",
   "tui.home.placeholder.example.tests": "Réparer les tests cassés",
-  "tui.home.agreement.prefix": "En utilisant MiMoCode, vous acceptez nos ",
+  "tui.home.agreement.prefix": "En utilisant AgentHosting, vous acceptez nos ",
   "tui.home.agreement.terms": "Conditions d'utilisation",
   "tui.home.agreement.separator": " et notre ",
   "tui.home.agreement.privacy": "Politique de confidentialité",
@@ -119,9 +119,9 @@ export const dict = {
   "tui.tips.cycle_sessions":
     "Appuyez sur {highlight}Ctrl+X Right/Left{/highlight} pour parcourir les sessions parent et enfant",
   "tui.tips.config_files":
-    "Créez {highlight}mimocode.json{/highlight} pour la configuration serveur et {highlight}tui.json{/highlight} pour le TUI",
+    "Créez {highlight}agenthosting.json{/highlight} pour la configuration serveur et {highlight}tui.json{/highlight} pour le TUI",
   "tui.tips.global_config":
-    "Placez les paramètres TUI dans {highlight}~/.config/mimocode/tui.json{/highlight} comme configuration globale",
+    "Placez les paramètres TUI dans {highlight}~/.config/agenthosting/tui.json{/highlight} comme configuration globale",
   "tui.tips.schema": "Ajoutez {highlight}$schema{/highlight} à votre config pour l'auto-complétion dans l'éditeur",
   "tui.tips.default_model": "Configurez {highlight}model{/highlight} dans la config pour définir le modèle par défaut",
   "tui.tips.keybinds":
@@ -131,15 +131,15 @@ export const dict = {
   "tui.tips.mcp_config":
     "Configurez les serveurs MCP locaux ou distants dans la section {highlight}mcp{/highlight}",
   "tui.tips.mcp_oauth":
-    "MiMoCode gère automatiquement OAuth pour les serveurs MCP distants nécessitant une authentification",
+    "AgentHosting gère automatiquement OAuth pour les serveurs MCP distants nécessitant une authentification",
   "tui.tips.custom_command":
-    "Ajoutez des fichiers {highlight}.md{/highlight} dans {highlight}.mimocode/command/{/highlight} pour définir des invites personnalisées réutilisables",
+    "Ajoutez des fichiers {highlight}.md{/highlight} dans {highlight}.agenthosting/command/{/highlight} pour définir des invites personnalisées réutilisables",
   "tui.tips.command_args":
     "Utilisez {highlight}$ARGUMENTS{/highlight}, {highlight}$1{/highlight}, {highlight}$2{/highlight} dans les commandes pour des entrées dynamiques",
   "tui.tips.command_backticks":
     "Utilisez des backticks dans les commandes pour injecter la sortie shell (ex. {highlight}`git status`{/highlight})",
   "tui.tips.custom_agent":
-    "Ajoutez des fichiers {highlight}.md{/highlight} dans {highlight}.mimocode/agent/{/highlight} pour des personas IA spécialisés",
+    "Ajoutez des fichiers {highlight}.md{/highlight} dans {highlight}.agenthosting/agent/{/highlight} pour des personas IA spécialisés",
   "tui.tips.agent_perms":
     "Configurez par agent les permissions des outils {highlight}edit{/highlight}, {highlight}bash{/highlight} et {highlight}webfetch{/highlight}",
   "tui.tips.bash_allow":
@@ -148,28 +148,28 @@ export const dict = {
     'Définissez {highlight}"rm -rf *": "deny"{/highlight} pour bloquer les commandes destructrices',
   "tui.tips.bash_ask":
     'Configurez {highlight}"git push": "ask"{/highlight} pour exiger une confirmation avant le push',
-  "tui.tips.formatter": "MiMoCode formate automatiquement les fichiers avec prettier, gofmt, ruff, etc.",
+  "tui.tips.formatter": "AgentHosting formate automatiquement les fichiers avec prettier, gofmt, ruff, etc.",
   "tui.tips.disable_formatter":
     'Définissez {highlight}"formatter": false{/highlight} dans la config pour désactiver le formatage automatique',
   "tui.tips.custom_formatter":
     "Définissez des commandes de formatage personnalisées par extension de fichier dans la config",
-  "tui.tips.lsp": "MiMoCode utilise des serveurs LSP pour une analyse de code intelligente",
+  "tui.tips.lsp": "AgentHosting utilise des serveurs LSP pour une analyse de code intelligente",
   "tui.tips.custom_tool":
-    "Créez des fichiers {highlight}.ts{/highlight} dans {highlight}.mimocode/tools/{/highlight} pour définir de nouveaux outils LLM",
+    "Créez des fichiers {highlight}.ts{/highlight} dans {highlight}.agenthosting/tools/{/highlight} pour définir de nouveaux outils LLM",
   "tui.tips.tool_scripts": "Les définitions d'outils peuvent invoquer des scripts en Python, Go, etc.",
   "tui.tips.plugins":
-    "Ajoutez des fichiers {highlight}.ts{/highlight} dans {highlight}.mimocode/plugin/{/highlight} pour des hooks d'événements",
+    "Ajoutez des fichiers {highlight}.ts{/highlight} dans {highlight}.agenthosting/plugin/{/highlight} pour des hooks d'événements",
   "tui.tips.plugin_notify":
     "Utilisez des plugins pour envoyer des notifications système à la fin des sessions",
   "tui.tips.plugin_protect":
-    "Créez un plugin pour empêcher MiMoCode de lire des fichiers sensibles",
+    "Créez un plugin pour empêcher AgentHosting de lire des fichiers sensibles",
   "tui.tips.run": "Utilisez {highlight}mimo run{/highlight} pour des scripts non interactifs",
   "tui.tips.continue": "Utilisez {highlight}mimo --continue{/highlight} pour reprendre la dernière session",
   "tui.tips.attach_cli":
     "Utilisez {highlight}mimo run -f file.ts{/highlight} pour joindre des fichiers via la CLI",
   "tui.tips.format_json":
     "Utilisez {highlight}--format json{/highlight} pour une sortie lisible par machine dans les scripts",
-  "tui.tips.serve": "Exécutez {highlight}mimo serve{/highlight} pour exposer l'API MiMoCode en mode headless",
+  "tui.tips.serve": "Exécutez {highlight}mimo serve{/highlight} pour exposer l'API AgentHosting en mode headless",
   "tui.tips.attach_server":
     "Utilisez {highlight}mimo run --attach{/highlight} pour vous connecter à un serveur en cours",
   "tui.tips.upgrade": "Exécutez {highlight}mimo upgrade{/highlight} pour passer à la dernière version",
@@ -184,7 +184,7 @@ export const dict = {
   "tui.tips.theme_system":
     'Utilisez {highlight}"theme": "system"{/highlight} pour suivre les couleurs du terminal',
   "tui.tips.theme_files":
-    "Créez des fichiers de thème JSON dans le dossier {highlight}.mimocode/themes/{/highlight}",
+    "Créez des fichiers de thème JSON dans le dossier {highlight}.agenthosting/themes/{/highlight}",
   "tui.tips.theme_variants": "Les thèmes prennent en charge des variantes claires/sombres pour les deux modes",
   "tui.tips.theme_ansi": "Référencez les couleurs ANSI 0-255 dans des thèmes personnalisés",
   "tui.tips.env_var":
@@ -270,14 +270,14 @@ export const dict = {
   "tui.skill.xlsx-official.description": "Créer, modifier et lire des classeurs Microsoft Excel (.xlsx)",
   "tui.skill.pdf-official.description": "Créer, modifier, transformer et lire des fichiers PDF",
   "tui.skill.pptx-official.description": "Créer, modifier et lire des présentations Microsoft PowerPoint (.pptx)",
-  "tui.skill.mimocode.description": "Documentation intégrée des fonctionnalités, config et commandes MiMoCode",
+  "tui.skill.mimocode.description": "Documentation intégrée des fonctionnalités, config et commandes AgentHosting",
   "tui.skill.evolve.description": "Réécrivez chaque couche de vous-même — outils, hooks, connaissances, workflows, même l'UI",
   "tui.skill.frontend-design.description": "Conseils pour un design d'interface visuel distinctif et intentionnel",
   "tui.skill.loop.description": "Planifier l'exécution récurrente d'un prompt",
   "tui.skill.html-to-video-pipeline.description": "L'arme ultime pour vidéos courtes — créez des vidéos courtes avec du HTML",
   "tui.skill.arxiv.description": "Rechercher, citer, télécharger et suivre des articles arXiv",
   "tui.skill.skill-creator.description": "Créer, réviser et améliorer des skills d'agent",
-  "tui.skill.drive-mimo.description": "Piloter un autre processus MiMoCode — événements JSON headless ou TUI interactive via tmux",
+  "tui.skill.drive-mimo.description": "Piloter un autre processus AgentHosting — événements JSON headless ou TUI interactive via tmux",
   "tui.skill.research-paper-writing.description": "Rédiger, polir et critiquer des articles académiques avec l'œil d'un relecteur",
   "tui.skill.codex.description": "Exécuter Codex CLI de façon autonome dans les scripts, la CI, Docker et Kubernetes",
   "tui.skill.claude-code.description": "Déléguer des tâches de programmation à Claude Code CLI",
@@ -435,7 +435,7 @@ export const dict = {
   "tui.toast.update_available.confirm": "La nouvelle version v{{version}} est disponible. Voulez-vous mettre à jour maintenant ?",
   "tui.toast.update_available.updating": "Mise à jour vers v{{version}}...",
   "tui.toast.update_available.failed": "La mise à jour a échoué",
-  "tui.toast.update_available.success": "Mis à jour vers MiMoCode v{{version}}. Veuillez redémarrer l'application.",
+  "tui.toast.update_available.success": "Mis à jour vers AgentHosting v{{version}}. Veuillez redémarrer l'application.",
   "tui.toast.updated.title": "Mis à jour automatiquement",
   "tui.toast.updated.message": "Correctif appliqué automatiquement : v{{version}}. Redémarrez pour utiliser la nouvelle version. Désactivez avec autoupdate: false dans la configuration.",
   "tui.toast.native_installer_tip": "Conseil : l'installateur natif (curl/PowerShell) est recommandé pour une meilleure expérience.",

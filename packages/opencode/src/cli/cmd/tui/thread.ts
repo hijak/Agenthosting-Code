@@ -156,12 +156,12 @@ async function promptDangerousPermissions(): Promise<boolean> {
 
 export const TuiThreadCommand = cmd({
   command: "$0 [project]",
-  describe: "start mimocode tui",
+  describe: "start agenthosting tui",
   builder: (yargs) =>
     withNetworkOptions(yargs)
       .positional("project", {
         type: "string",
-        describe: "path to start mimocode in",
+        describe: "path to start agenthosting in",
       })
       .option("model", {
         type: "string",

@@ -25,7 +25,7 @@ interface RemovalTargets {
 
 export const UninstallCommand = {
   command: "uninstall",
-  describe: "uninstall mimocode and remove all related files",
+  describe: "uninstall agenthosting and remove all related files",
   builder: (yargs: Argv) =>
     yargs
       .option("keep-config", {

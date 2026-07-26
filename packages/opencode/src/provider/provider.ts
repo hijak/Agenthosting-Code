@@ -1767,6 +1767,12 @@ const layer: Layer.Layer<
         return { providerID: entry.providerID, modelID: entry.modelID }
       }
 
+      const agenthosting = s.providers[ProviderID.make("agenthosting")]
+      if (agenthosting) {
+        const [ahModel] = sort(Object.values(agenthosting.models))
+        if (ahModel) return { providerID: agenthosting.id, modelID: ahModel.id }
+      }
+
       const mimo = s.providers[ProviderID.make("mimo")]
       if (mimo?.models[ModelID.make("mimo-auto")]) {
         return { providerID: mimo.id, modelID: ModelID.make("mimo-auto") }

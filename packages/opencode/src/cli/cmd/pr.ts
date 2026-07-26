@@ -7,7 +7,7 @@ import { Log, Process } from "@/util"
 
 export const PrCommand = cmd({
   command: "pr <number>",
-  describe: "fetch and checkout a GitHub PR branch, then run mimocode",
+  describe: "fetch and checkout a GitHub PR branch, then run agenthosting",
   builder: (yargs) =>
     yargs.positional("number", {
       type: "number",
@@ -98,10 +98,10 @@ export const PrCommand = cmd({
               const sessionMatch = prInfo.body.match(/https:\/\/opncd\.ai\/s\/([a-zA-Z0-9_-]+)/)
               if (sessionMatch) {
                 const sessionUrl = sessionMatch[0]
-                UI.println(`Found mimocode session: ${sessionUrl}`)
+                UI.println(`Found agenthosting session: ${sessionUrl}`)
                 UI.println(`Importing session...`)
 
-                const importResult = await Process.text(["mimo", "import", sessionUrl], {
+                const importResult = await Process.text(["ah", "import", sessionUrl], {
                   nothrow: true,
                 })
                 if (importResult.code === 0) {
@@ -120,11 +120,11 @@ export const PrCommand = cmd({
 
         UI.println(`Successfully checked out PR #${prNumber} as branch '${localBranchName}'`)
         UI.println()
-        UI.println("Starting mimocode...")
+        UI.println("Starting agenthosting...")
         UI.println()
 
         const mimoArgs = sessionId ? ["-s", sessionId] : []
-        const mimoProcess = Process.spawn(["mimo", ...mimoArgs], {
+        const mimoProcess = Process.spawn(["ah", ...mimoArgs], {
           stdin: "inherit",
           stdout: "inherit",
           stderr: "inherit",
