@@ -14,7 +14,7 @@ targets=(
   linux-x64-baseline
   linux-arm64-musl
   linux-x64-musl
-  linux-x64-musl-baseline
+  linux-x64-baseline-musl
   darwin-arm64
   darwin-x64
   darwin-x64-baseline
@@ -27,7 +27,7 @@ rm -rf "$version_dir"
 mkdir -p "$version_dir"
 
 for build_target in "${targets[@]}"; do
-  release_target="${build_target/musl-baseline/baseline-musl}"
+  release_target="$build_target"
   bin_dir="$source_dir/mimocode-$build_target/bin"
   if [[ "$build_target" == windows-* ]]; then
     source_binary="$bin_dir/mimo.exe"
