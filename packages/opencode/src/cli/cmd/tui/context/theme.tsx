@@ -535,7 +535,7 @@ export const { use: useTheme, provider: ThemeProvider } = createSimpleContext({
   },
 })
 
-const THEME_SCHEMA_URL = "https://mimo.xiaomi.com/mimocode/theme.json"
+const THEME_SCHEMA_URL = "https://agenthosting.app/docs/theme.json"
 
 async function getCustomThemes() {
   const directories = [

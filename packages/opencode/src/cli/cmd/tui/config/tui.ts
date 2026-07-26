@@ -193,7 +193,7 @@ export async function get() {
   return runPromise((svc) => svc.get())
 }
 
-const TUI_SCHEMA_URL = "https://mimo.xiaomi.com/mimocode/tui.json"
+const TUI_SCHEMA_URL = "https://agenthosting.app/docs/tui.json"
 
 async function loadFile(filepath: string): Promise<Info> {
   const text = await ConfigPaths.readFile(filepath)

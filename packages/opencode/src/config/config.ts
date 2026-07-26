@@ -65,7 +65,7 @@ function normalizeLoadedConfig(data: unknown, source: string) {
   delete copy.theme
   delete copy.keybinds
   delete copy.tui
-  log.warn("tui keys in mimocode config are deprecated; move them to tui.json", { path: source })
+  log.warn("tui keys in agenthosting config are deprecated; move them to tui.json", { path: source })
   return copy
 }
 
@@ -100,10 +100,10 @@ const InfoSchema = Schema.Struct({
   }),
   logLevel: Schema.optional(LogLevelRef).annotate({ description: "Log level" }),
   server: Schema.optional(ConfigServer.Server).annotate({
-    description: "Server configuration for mimo serve and web commands",
+    description: "Server configuration for ah serve and web commands",
   }),
   command: Schema.optional(Schema.Record(Schema.String, ConfigCommand.Info)).annotate({
-    description: "Command configuration, see https://mimo.xiaomi.com/mimocode/commands",
+    description: "Command configuration, see https://agenthosting.app/docs/commands",
   }),
   skills: Schema.optional(ConfigSkills.Info).annotate({ description: "Additional skill folder paths" }),
   compose: Schema.optional(ConfigCompose.Info).annotate({ description: "Compose mode configuration" }),
@@ -193,7 +193,7 @@ const InfoSchema = Schema.Struct({
       }),
       [Schema.Record(Schema.String, AgentRef)],
     ),
-  ).annotate({ description: "Agent configuration, see https://mimo.xiaomi.com/mimocode/agents" }),
+  ).annotate({ description: "Agent configuration, see https://agenthosting.app/docs/agents" }),
   provider: Schema.optional(Schema.Record(Schema.String, ConfigProvider.Info)).annotate({
     description: "Custom provider configurations and model overrides",
   }),
@@ -578,8 +578,8 @@ export const layer = Layer.effect(
 
       yield* Effect.promise(() => resolveLoadedPlugins(data, options.path))
       if (!data.$schema || data.$schema === "https://opencode.ai/config.json") {
-        data.$schema = "https://mimo.xiaomi.com/mimocode/config.json"
-        const edits = modify(text, ["$schema"], "https://mimo.xiaomi.com/mimocode/config.json", {
+        data.$schema = "https://agenthosting.app/docs/config.json"
+        const edits = modify(text, ["$schema"], "https://agenthosting.app/docs/config.json", {
           formattingOptions: { insertSpaces: true, tabSize: 2 },
           isArrayInsertion: false,
         })
@@ -613,7 +613,7 @@ export const layer = Layer.effect(
             .then(async (mod) => {
               const { provider, model, ...rest } = mod.default
               if (provider && model) result.model = `${provider}/${model}`
-              result["$schema"] = "https://mimo.xiaomi.com/mimocode/config.json"
+              result["$schema"] = "https://agenthosting.app/docs/config.json"
               result = mergeDeep(result, rest)
               await fsNode.writeFile(path.join(Global.Path.config, "config.json"), JSON.stringify(result, null, 2))
               await fsNode.unlink(legacy)
@@ -629,7 +629,7 @@ export const layer = Layer.effect(
         !existsSync(path.join(Global.Path.config, "mimocode.json")) &&
         !existsSync(globalConfigFile)
       ) {
-        const starter = '{\n  "$schema": "https://mimo.xiaomi.com/mimocode/config.json"\n}\n'
+        const starter = '{\n  "$schema": "https://agenthosting.app/docs/config.json"\n}\n'
         yield* fs.writeFileString(globalConfigFile, starter).pipe(Effect.catch(() => Effect.void))
       }
 
@@ -774,7 +774,7 @@ export const layer = Layer.effect(
             }
             const wellknown = (yield* Effect.promise(() => response.json())) as { config?: Record<string, unknown> }
             const remoteConfig = wellknown.config ?? {}
-            if (!remoteConfig.$schema) remoteConfig.$schema = "https://mimo.xiaomi.com/mimocode/config.json"
+            if (!remoteConfig.$schema) remoteConfig.$schema = "https://agenthosting.app/docs/config.json"
             const source = `${url}/.well-known/opencode`
             const next = yield* loadConfig(JSON.stringify(remoteConfig), {
               dir: path.dirname(source),

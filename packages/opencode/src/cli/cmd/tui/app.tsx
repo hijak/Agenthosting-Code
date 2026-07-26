@@ -951,7 +951,7 @@ function App(props: { onSnapshot?: () => Promise<string[]> }) {
         aliases: ["docs"],
       },
       onSelect: () => {
-        open("https://mimo.xiaomi.com/coder/docs").catch(() => {})
+        open("https://agenthosting.app/docs").catch(() => {})
         dialog.clear()
       },
       category: "system",

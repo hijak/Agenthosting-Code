@@ -112,6 +112,10 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
         },
       }
       if (!input.model) input.model = `${PROVIDER_ID}/login`
+      input.disabled_providers ??= []
+      for (const p of ["mimo", "xiaomi", "opencode", "opencode-go"]) {
+        if (!input.disabled_providers.includes(p)) input.disabled_providers.push(p)
+      }
     },
     auth: {
       provider: PROVIDER_ID,

@@ -60,7 +60,7 @@ export const dict = {
   "tui.tips.doc": "Exécutez {highlight}/doc{/highlight} pour ouvrir la documentation utilisateur",
   "tui.tips.free_models": "Modèles gratuits disponibles pour une durée limitée — essayez-les !",
   "tui.tips.free_api_sunset":
-    "Le service API gratuit est terminé. Exécutez {highlight}/login{/highlight} pour vous connecter. Abonnez-vous au MiMo Token Plan ou configurez une API tierce pour utiliser MiMo Code.",
+    "Le service API gratuit est terminé. Exécutez {highlight}/login{/highlight} pour vous connecter. Abonnez-vous au AgentHosting Plan ou configurez une API tierce pour utiliser AgentHosting.",
   "tui.tips.multi_skills":
     "Combinez plusieurs déclencheurs {highlight}/skill-name{/highlight} dans un même message pour utiliser plusieurs Skills ensemble",
   "tui.tips.ask_slash_commands":
@@ -163,22 +163,22 @@ export const dict = {
     "Utilisez des plugins pour envoyer des notifications système à la fin des sessions",
   "tui.tips.plugin_protect":
     "Créez un plugin pour empêcher AgentHosting de lire des fichiers sensibles",
-  "tui.tips.run": "Utilisez {highlight}mimo run{/highlight} pour des scripts non interactifs",
-  "tui.tips.continue": "Utilisez {highlight}mimo --continue{/highlight} pour reprendre la dernière session",
+  "tui.tips.run": "Utilisez {highlight}ah run{/highlight} pour des scripts non interactifs",
+  "tui.tips.continue": "Utilisez {highlight}ah --continue{/highlight} pour reprendre la dernière session",
   "tui.tips.attach_cli":
-    "Utilisez {highlight}mimo run -f file.ts{/highlight} pour joindre des fichiers via la CLI",
+    "Utilisez {highlight}ah run -f file.ts{/highlight} pour joindre des fichiers via la CLI",
   "tui.tips.format_json":
     "Utilisez {highlight}--format json{/highlight} pour une sortie lisible par machine dans les scripts",
-  "tui.tips.serve": "Exécutez {highlight}mimo serve{/highlight} pour exposer l'API AgentHosting en mode headless",
+  "tui.tips.serve": "Exécutez {highlight}ah serve{/highlight} pour exposer l'API AgentHosting en mode headless",
   "tui.tips.attach_server":
-    "Utilisez {highlight}mimo run --attach{/highlight} pour vous connecter à un serveur en cours",
-  "tui.tips.upgrade": "Exécutez {highlight}mimo upgrade{/highlight} pour passer à la dernière version",
+    "Utilisez {highlight}ah run --attach{/highlight} pour vous connecter à un serveur en cours",
+  "tui.tips.upgrade": "Exécutez {highlight}ah upgrade{/highlight} pour passer à la dernière version",
   "tui.tips.auth_list":
-    "Exécutez {highlight}mimo auth list{/highlight} pour voir tous les fournisseurs configurés",
+    "Exécutez {highlight}ah providers list{/highlight} pour voir tous les fournisseurs configurés",
   "tui.tips.agent_create":
-    "Exécutez {highlight}mimo agent create{/highlight} pour créer un agent en mode guidé",
+    "Exécutez {highlight}ah agent create{/highlight} pour créer un agent en mode guidé",
   "tui.tips.github_install":
-    "Exécutez {highlight}mimo github install{/highlight} pour configurer le workflow GitHub",
+    "Exécutez {highlight}ah github install{/highlight} pour configurer le workflow GitHub",
   "tui.tips.github_oc":
     "Commentez {highlight}/oc{/highlight} sur une ligne de PR pour une revue ciblée",
   "tui.tips.theme_system":
@@ -214,7 +214,7 @@ export const dict = {
   "tui.tips.external_dir":
     "La permission {highlight}external_directory{/highlight} protège les fichiers en dehors du projet",
   "tui.tips.debug_config":
-    "Exécutez {highlight}mimo debug config{/highlight} pour diagnostiquer la configuration",
+    "Exécutez {highlight}ah debug config{/highlight} pour diagnostiquer la configuration",
   "tui.tips.print_logs":
     "Utilisez l'option {highlight}--print-logs{/highlight} pour afficher des journaux détaillés sur stderr",
   "tui.tips.timeline":
@@ -228,7 +228,7 @@ export const dict = {
   "tui.tips.username_toggle":
     "Activez/désactivez l'affichage du nom d'utilisateur via la palette de commandes ({highlight}Ctrl+P{/highlight})",
   "tui.tips.zen":
-    "Utilisez {highlight}/connect{/highlight} avec MiMo Code pour des modèles testés et sélectionnés",
+    "Utilisez {highlight}/connect{/highlight} avec AgentHosting pour des modèles testés et sélectionnés",
   "tui.tips.agents_md":
     "Versionnez le fichier {highlight}AGENTS.md{/highlight} de votre projet sur Git pour le partager avec l'équipe",
   "tui.tips.review":
@@ -379,18 +379,18 @@ export const dict = {
   "tui.dialog.agreement.confirm": "Accepter et continuer",
   "tui.dialog.free_api_sunset.title": "Le service API gratuit est terminé",
   "tui.dialog.free_api_sunset.message":
-    "Exécutez /login pour vous connecter. Abonnez-vous au MiMo Token Plan ou configurez une API tierce pour utiliser MiMo Code.",
+    "Exécutez /login pour vous connecter. Abonnez-vous au AgentHosting Plan ou configurez une API tierce pour utiliser AgentHosting.",
   "tui.command.consent.revoke.title": "Révoquer l'accord du modèle gratuit",
   "tui.consent.revoked": "Accord du modèle gratuit révoqué — vous devrez l'accepter à nouveau",
   "tui.dialog.select.placeholder": "Rechercher",
   "tui.dialog.model.login_hint": "Astuce : exécutez /login pour vous connecter avant de changer de modèle",
-  "tui.model.mimo_auto.name": "MiMo Auto (MiMo-V2.5 gratuit jusqu’au 26 juillet à 18:00 · UTC+8)",
-  "tui.model.mimo_auto.sunset_name": "MiMo Auto (MiMo-V2.5)",
+  "tui.model.mimo_auto.name": " ( gratuit jusqu’au 26 juillet à 18:00 · UTC+8)",
+  "tui.model.mimo_auto.sunset_name": " ()",
   "tui.dialog.token_plan.title": "Abonnez-vous à un Token Plan ou patientez dans la file",
   "tui.dialog.token_plan.line1":
     "En mode gratuit, les requêtes sont mises en file d'attente. Pour un service stable et de qualité,",
   "tui.dialog.token_plan.subscribe": "abonnez-vous à ",
-  "tui.dialog.token_plan.link": "MiMo Token Plan",
+  "tui.dialog.token_plan.link": "AgentHosting Plan",
   "tui.dialog.token_plan.link_suffix": ".",
   "tui.dialog.token_plan.line3": "Vous pouvez aussi exécuter /login pour configurer votre propre clé API.",
   "tui.dialog.token_plan.confirm": "Compris",
@@ -427,7 +427,7 @@ export const dict = {
   "tui.dialog.try_best.action.verify": "vérification",
   "tui.dialog.try_best.action.same_kind": "même type",
   "tui.dialog.try_best.handoff.title": "Transférer à {{target}}",
-  "tui.dialog.try_best.handoff.description": "Demander à MiMo de déléguer le travail restant à ce harnais",
+  "tui.dialog.try_best.handoff.description": "Demander à AgentHosting de déléguer le travail restant à ce harnais",
   "tui.dialog.try_best.continue.title": "Continuer avec {{model}}",
   "tui.dialog.try_best.continue.description": "Demander au modèle actuel d'abandonner cette approche et de replanifier",
   "tui.toast.instructions_loaded": "Chargé {{files}}",
@@ -524,7 +524,7 @@ export const dict = {
   "tui.command.voice.control.title": "Basculer le contrôle vocal (multimodal)",
   "tui.command.voice.control.title_on": "Contrôle vocal : activé (multimodal) — cliquer pour désactiver",
   "tui.command.voice.control.title_off": "Contrôle vocal : désactivé (ASR rapide) — cliquer pour activer",
-  "tui.voice.error.no_auth": "Utilisez /connect pour vous connecter à MiMo, ou configurez voice.asr_model pour un autre fournisseur",
+  "tui.voice.error.no_auth": "Utilisez /connect pour vous connecter à AgentHosting, ou configurez voice.asr_model pour un autre fournisseur",
   "tui.voice.error.no_auth_provider": "Le fournisseur vocal \"{{provider}}\" n'est pas authentifié, vérifiez son apiKey",
   "tui.voice.error.provider_not_found": "Fournisseur \"{{provider}}\" indisponible — /connect pour s'authentifier, ou déclarez models dans la config pour les endpoints personnalisés",
   "tui.voice.error.no_url": "Le fournisseur \"{{provider}}\" n'a pas de baseURL configuré — définissez options.baseURL dans la configuration",
@@ -543,12 +543,12 @@ export const dict = {
   "tui.command.plugins.list.title": "Plugins",
   "tui.command.plugins.install.title": "Installer un plugin",
 
-  // MiMo Auto (free) — TUI login dialog
-  "tui.dialog.login.mimo_free": "MiMo Auto (free)",
+  //  — TUI login dialog
+  "tui.dialog.login.mimo_free": "",
   "tui.dialog.login.mimo_free.desc": "Canal anonyme gratuit — aucune connexion requise",
-  "tui.dialog.login.mimo_free.success": "MiMo Auto (free) est prêt — modèle par défaut défini sur mimo/mimo-auto",
-  "tui.dialog.login.mimo_free.unavailable": "Fournisseur MiMo Auto (free) non chargé",
-  "tui.dialog.login.flow.title": "Connexion MiMo",
+  "tui.dialog.login.mimo_free.success": " est prêt — modèle par défaut défini sur agenthosting/login",
+  "tui.dialog.login.mimo_free.unavailable": "Fournisseur  non chargé",
+  "tui.dialog.login.flow.title": "Connexion AgentHosting",
   "tui.dialog.login.flow.placeholder": "Collez le code (ou attendez le rappel du navigateur)",
   "tui.dialog.login.flow.busy": "Connexion en cours...",
   "tui.dialog.login.flow.manual_hint": "Le navigateur ne s'est pas ouvert ? Cliquez sur le lien ci-dessous pour copier :",
@@ -560,13 +560,13 @@ export const dict = {
   "cli.providers.select": "Sélectionner un fournisseur",
   "cli.providers.other": "Autre fournisseur",
   "cli.providers.mimo.recommended_hint": "recommandé",
-  "cli.providers.mimo_free.hint": "Canal anonyme gratuit / mimo-auto",
-  "cli.providers.mimo_free.verifying": "Vérification du canal MiMo Auto (free)...",
-  "cli.providers.mimo_free.ready": "Canal MiMo Auto (free) prêt",
-  "cli.providers.mimo_free.failed": "Échec de la vérification de MiMo Auto (free)",
-  "cli.providers.mimo_free.default_set": "Modèle par défaut défini sur mimo/mimo-auto (contexte 1M, gratuit)",
+  "cli.providers.mimo_free.hint": "Canal anonyme gratuit / login",
+  "cli.providers.mimo_free.verifying": "Vérification du canal ...",
+  "cli.providers.mimo_free.ready": "Canal  prêt",
+  "cli.providers.mimo_free.failed": "Échec de la vérification de ",
+  "cli.providers.mimo_free.default_set": "Modèle par défaut défini sur agenthosting/login (contexte 1M, gratuit)",
   "cli.providers.mimo_free.usage_hint":
-    "Aucune connexion requise — exécutez simplement mimo. Pour les modèles payants/premium, choisissez plutôt la connexion navigateur MiMo.",
+    "Aucune connexion requise — exécutez simplement ah. Pour les modèles payants/premium, choisissez plutôt la connexion navigateur AgentHosting.",
   "cli.providers.mimo_login.decrypt_retry": "Échec du déchiffrement, veuillez réessayer ({remaining} tentatives restantes)",
   "cli.providers.mimo_login.decrypt_exhausted": "Échec du déchiffrement, nombre maximal de tentatives atteint",
 
@@ -592,7 +592,7 @@ export const dict = {
   // Workspace trust
   "trust.title": "Accès à l'espace de travail :",
   "trust.safety_check": "Vérification rapide : est-ce un projet que vous avez créé ou auquel vous faites confiance ? (Votre propre code, un projet open source reconnu ou un travail de votre équipe). Sinon, prenez un moment pour examiner le contenu de ce dossier.",
-  "trust.capabilities": "MiMo Code pourra lire, modifier et exécuter des fichiers ici.",
+  "trust.capabilities": "AgentHosting pourra lire, modifier et exécuter des fichiers ici.",
   "trust.plugin_warn": "Si des plugins malveillants existent dans ce répertoire, ils peuvent exécuter du code arbitraire, lire, modifier ou exfiltrer vos fichiers.",
   "trust.option.yes": "Oui, je fais confiance à ce dossier",
   "trust.option.no": "Non, quitter",
@@ -606,7 +606,7 @@ export const dict = {
   "trust.dangerous.option.no": "Quitter (recommandé)",
   "skip_permissions.title": "AVERTISSEMENT : mode contournement des permissions",
   "skip_permissions.body":
-    "Vous avez démarré avec --dangerously-skip-permissions. MiMo Code va lire, modifier et exécuter des fichiers et lancer des commandes shell SANS demander d'approbation. Seules les règles que vous avez explicitement refusées (deny) dans la configuration restent appliquées. Vous êtes seul responsable de tout ce qu'il fait.",
+    "Vous avez démarré avec --dangerously-skip-permissions. AgentHosting va lire, modifier et exécuter des fichiers et lancer des commandes shell SANS demander d'approbation. Seules les règles que vous avez explicitement refusées (deny) dans la configuration restent appliquées. Vous êtes seul responsable de tout ce qu'il fait.",
   "skip_permissions.plugin_warn":
     "Dans ce mode, une invite, un fichier ou un plugin malveillant peut exécuter des commandes arbitraires et modifier ou exfiltrer vos données sans aucune confirmation.",
   "skip_permissions.root_warn":

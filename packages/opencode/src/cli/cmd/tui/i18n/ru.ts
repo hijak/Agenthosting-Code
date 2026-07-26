@@ -59,7 +59,7 @@ export const dict = {
   "tui.tips.doc": "Выполните {highlight}/doc{/highlight}, чтобы открыть пользовательскую документацию",
   "tui.tips.free_models": "Бесплатные модели доступны ограниченное время — попробуйте их сейчас!",
   "tui.tips.free_api_sunset":
-    "Сервис бесплатного API завершён. Выполните {highlight}/login{/highlight}, чтобы войти. Оформите подписку на MiMo Token Plan или настройте сторонний API для использования MiMo Code.",
+    "Сервис бесплатного API завершён. Выполните {highlight}/login{/highlight}, чтобы войти. Оформите подписку на AgentHosting Plan или настройте сторонний API для использования AgentHosting.",
   "tui.tips.multi_skills":
     "Комбинируйте несколько {highlight}/skill-name{/highlight} в одном сообщении, чтобы использовать несколько Skills одновременно",
   "tui.tips.ask_slash_commands":
@@ -171,25 +171,25 @@ export const dict = {
   "tui.tips.plugin_protect":
     "Создайте плагин, который запретит AgentHosting читать чувствительные файлы",
   "tui.tips.run":
-    "Используйте {highlight}mimo run{/highlight} для неинтерактивных скриптов",
+    "Используйте {highlight}ah run{/highlight} для неинтерактивных скриптов",
   "tui.tips.continue":
-    "Используйте {highlight}mimo --continue{/highlight}, чтобы продолжить последнюю сессию",
+    "Используйте {highlight}ah --continue{/highlight}, чтобы продолжить последнюю сессию",
   "tui.tips.attach_cli":
-    "Используйте {highlight}mimo run -f file.ts{/highlight}, чтобы прикрепить файлы из командной строки",
+    "Используйте {highlight}ah run -f file.ts{/highlight}, чтобы прикрепить файлы из командной строки",
   "tui.tips.format_json":
     "Используйте {highlight}--format json{/highlight} для машинно-читаемого вывода в скриптах",
   "tui.tips.serve":
-    "Запустите {highlight}mimo serve{/highlight} для headless-доступа к API AgentHosting",
+    "Запустите {highlight}ah serve{/highlight} для headless-доступа к API AgentHosting",
   "tui.tips.attach_server":
-    "Используйте {highlight}mimo run --attach{/highlight}, чтобы подключиться к запущенному серверу",
+    "Используйте {highlight}ah run --attach{/highlight}, чтобы подключиться к запущенному серверу",
   "tui.tips.upgrade":
-    "Выполните {highlight}mimo upgrade{/highlight}, чтобы обновиться до последней версии",
+    "Выполните {highlight}ah upgrade{/highlight}, чтобы обновиться до последней версии",
   "tui.tips.auth_list":
-    "Выполните {highlight}mimo auth list{/highlight}, чтобы увидеть всех настроенных провайдеров",
+    "Выполните {highlight}ah providers list{/highlight}, чтобы увидеть всех настроенных провайдеров",
   "tui.tips.agent_create":
-    "Выполните {highlight}mimo agent create{/highlight}, чтобы создать агента в пошаговом режиме",
+    "Выполните {highlight}ah agent create{/highlight}, чтобы создать агента в пошаговом режиме",
   "tui.tips.github_install":
-    "Выполните {highlight}mimo github install{/highlight}, чтобы настроить GitHub-workflow",
+    "Выполните {highlight}ah github install{/highlight}, чтобы настроить GitHub-workflow",
   "tui.tips.github_oc":
     "Оставьте {highlight}/oc{/highlight} в комментарии к строке PR для точечного код-ревью",
   "tui.tips.theme_system":
@@ -226,7 +226,7 @@ export const dict = {
   "tui.tips.external_dir":
     "Разрешение {highlight}external_directory{/highlight} защищает файлы вне проекта",
   "tui.tips.debug_config":
-    "Выполните {highlight}mimo debug config{/highlight}, чтобы диагностировать проблемы конфигурации",
+    "Выполните {highlight}ah debug config{/highlight}, чтобы диагностировать проблемы конфигурации",
   "tui.tips.print_logs":
     "Используйте флаг {highlight}--print-logs{/highlight}, чтобы видеть подробные логи в stderr",
   "tui.tips.timeline":
@@ -240,7 +240,7 @@ export const dict = {
   "tui.tips.username_toggle":
     "Переключайте отображение имени пользователя через палитру команд ({highlight}Ctrl+P{/highlight})",
   "tui.tips.zen":
-    "Используйте {highlight}/connect{/highlight} с MiMo Code для подобранных и протестированных моделей",
+    "Используйте {highlight}/connect{/highlight} с AgentHosting для подобранных и протестированных моделей",
   "tui.tips.agents_md":
     "Закоммитьте {highlight}AGENTS.md{/highlight} вашего проекта в Git для общего доступа в команде",
   "tui.tips.review":
@@ -394,18 +394,18 @@ export const dict = {
   "tui.dialog.agreement.confirm": "Принять и продолжить",
   "tui.dialog.free_api_sunset.title": "Сервис бесплатного API завершён",
   "tui.dialog.free_api_sunset.message":
-    "Выполните /login, чтобы войти. Оформите подписку на MiMo Token Plan или настройте сторонний API для использования MiMo Code.",
+    "Выполните /login, чтобы войти. Оформите подписку на AgentHosting Plan или настройте сторонний API для использования AgentHosting.",
   "tui.command.consent.revoke.title": "Отозвать согласие на бесплатную модель",
   "tui.consent.revoked": "Согласие на бесплатную модель отозвано — потребуется принять снова",
   "tui.dialog.select.placeholder": "Поиск",
   "tui.dialog.model.login_hint": "Подсказка: выполните /login для входа перед сменой модели",
-  "tui.model.mimo_auto.name": "MiMo Auto (MiMo-V2.5 бесплатно до 26 июля, 18:00 · UTC+8)",
-  "tui.model.mimo_auto.sunset_name": "MiMo Auto (MiMo-V2.5)",
+  "tui.model.mimo_auto.name": " ( бесплатно до 26 июля, 18:00 · UTC+8)",
+  "tui.model.mimo_auto.sunset_name": " ()",
   "tui.dialog.token_plan.title": "Оформите Token Plan или подождите в очереди",
   "tui.dialog.token_plan.line1":
     "В бесплатном режиме запросы сейчас в очереди. Для стабильного и качественного сервиса",
   "tui.dialog.token_plan.subscribe": "оформите ",
-  "tui.dialog.token_plan.link": "MiMo Token Plan",
+  "tui.dialog.token_plan.link": "AgentHosting Plan",
   "tui.dialog.token_plan.link_suffix": ".",
   "tui.dialog.token_plan.line3": "Вы также можете выполнить /login, чтобы настроить собственный API-ключ.",
   "tui.dialog.token_plan.confirm": "Понятно",
@@ -441,7 +441,7 @@ export const dict = {
   "tui.dialog.try_best.action.verify": "проверка",
   "tui.dialog.try_best.action.same_kind": "один тип",
   "tui.dialog.try_best.handoff.title": "Передать работу {{target}}",
-  "tui.dialog.try_best.handoff.description": "Попросить MiMo поручить незавершённую работу этому исполнителю",
+  "tui.dialog.try_best.handoff.description": "Попросить AgentHosting поручить незавершённую работу этому исполнителю",
   "tui.dialog.try_best.continue.title": "Продолжить с {{model}}",
   "tui.dialog.try_best.continue.description": "Попросить текущую модель отказаться от этого подхода и составить новый план",
   "tui.toast.instructions_loaded": "Загружено {{files}}",
@@ -535,7 +535,7 @@ export const dict = {
   "tui.command.voice.control.title": "Переключить голосовое управление (мультимодальное)",
   "tui.command.voice.control.title_on": "Голосовое управление: включено (мультимодальное) — нажмите для отключения",
   "tui.command.voice.control.title_off": "Голосовое управление: отключено (быстрый ASR) — нажмите для включения",
-  "tui.voice.error.no_auth": "Используйте /connect для подключения к MiMo или настройте voice.asr_model для другого провайдера",
+  "tui.voice.error.no_auth": "Используйте /connect для подключения к AgentHosting или настройте voice.asr_model для другого провайдера",
   "tui.voice.error.no_auth_provider": "Голосовой провайдер \"{{provider}}\" не авторизован, проверьте его apiKey",
   "tui.voice.error.provider_not_found": "Провайдер \"{{provider}}\" недоступен — /connect для аутентификации, или объявите models в конфигурации для пользовательских эндпоинтов",
   "tui.voice.error.no_url": "У провайдера \"{{provider}}\" не настроен baseURL — укажите options.baseURL в конфигурации",
@@ -554,12 +554,12 @@ export const dict = {
   "tui.command.plugins.list.title": "Плагины",
   "tui.command.plugins.install.title": "Установить плагин",
 
-  // MiMo Auto (free) — TUI login dialog
-  "tui.dialog.login.mimo_free": "MiMo Auto (free)",
+  //  — TUI login dialog
+  "tui.dialog.login.mimo_free": "",
   "tui.dialog.login.mimo_free.desc": "Анонимный бесплатный канал — вход не требуется",
-  "tui.dialog.login.mimo_free.success": "MiMo Auto (free) готов — модель по умолчанию: mimo/mimo-auto",
-  "tui.dialog.login.mimo_free.unavailable": "Провайдер MiMo Auto (free) не загружен",
-  "tui.dialog.login.flow.title": "Вход в MiMo",
+  "tui.dialog.login.mimo_free.success": " готов — модель по умолчанию: agenthosting/login",
+  "tui.dialog.login.mimo_free.unavailable": "Провайдер  не загружен",
+  "tui.dialog.login.flow.title": "Вход в AgentHosting",
   "tui.dialog.login.flow.placeholder": "Вставьте код (или дождитесь обратного вызова браузера)",
   "tui.dialog.login.flow.busy": "Вход...",
   "tui.dialog.login.flow.manual_hint": "Браузер не открылся? Нажмите на ссылку ниже, чтобы скопировать:",
@@ -571,13 +571,13 @@ export const dict = {
   "cli.providers.select": "Выберите провайдера",
   "cli.providers.other": "Другой провайдер",
   "cli.providers.mimo.recommended_hint": "рекомендуется",
-  "cli.providers.mimo_free.hint": "Анонимный бесплатный канал / mimo-auto",
-  "cli.providers.mimo_free.verifying": "Проверка канала MiMo Auto (free)...",
-  "cli.providers.mimo_free.ready": "Канал MiMo Auto (free) готов",
-  "cli.providers.mimo_free.failed": "Не удалось проверить MiMo Auto (free)",
-  "cli.providers.mimo_free.default_set": "Модель по умолчанию: mimo/mimo-auto (контекст 1M, бесплатно)",
+  "cli.providers.mimo_free.hint": "Анонимный бесплатный канал / login",
+  "cli.providers.mimo_free.verifying": "Проверка канала ...",
+  "cli.providers.mimo_free.ready": "Канал  готов",
+  "cli.providers.mimo_free.failed": "Не удалось проверить ",
+  "cli.providers.mimo_free.default_set": "Модель по умолчанию: agenthosting/login (контекст 1M, бесплатно)",
   "cli.providers.mimo_free.usage_hint":
-    "Вход не требуется — просто запустите mimo. Для платных/премиум-моделей выберите вход через браузер MiMo.",
+    "Вход не требуется — просто запустите ah. Для платных/премиум-моделей выберите вход через браузер AgentHosting.",
   "cli.providers.mimo_login.decrypt_retry": "Ошибка расшифровки, повторите попытку (осталось попыток: {remaining})",
   "cli.providers.mimo_login.decrypt_exhausted": "Ошибка расшифровки, превышено максимальное число попыток",
 
@@ -603,7 +603,7 @@ export const dict = {
   // Workspace trust
   "trust.title": "Доступ к рабочему пространству:",
   "trust.safety_check": "Проверка безопасности: это проект, который вы создали или которому доверяете? (Ваш собственный код, известный open source проект или работа вашей команды). Если нет, сначала проверьте содержимое этой папки.",
-  "trust.capabilities": "MiMo Code сможет читать, редактировать и выполнять файлы здесь.",
+  "trust.capabilities": "AgentHosting сможет читать, редактировать и выполнять файлы здесь.",
   "trust.plugin_warn": "Если в этом каталоге есть вредоносные плагины, они могут выполнять произвольный код, читать, изменять или похищать ваши файлы.",
   "trust.option.yes": "Да, я доверяю этой папке",
   "trust.option.no": "Нет, выйти",
@@ -617,7 +617,7 @@ export const dict = {
   "trust.dangerous.option.no": "Выйти (рекомендуется)",
   "skip_permissions.title": "ПРЕДУПРЕЖДЕНИЕ: режим обхода разрешений",
   "skip_permissions.body":
-    "Вы запустили с --dangerously-skip-permissions. MiMo Code будет читать, редактировать и выполнять файлы, а также запускать команды оболочки БЕЗ запроса подтверждения. Действуют только правила, которые вы явно запретили (deny) в конфигурации. Вы несёте полную ответственность за все его действия.",
+    "Вы запустили с --dangerously-skip-permissions. AgentHosting будет читать, редактировать и выполнять файлы, а также запускать команды оболочки БЕЗ запроса подтверждения. Действуют только правила, которые вы явно запретили (deny) в конфигурации. Вы несёте полную ответственность за все его действия.",
   "skip_permissions.plugin_warn":
     "В этом режиме вредоносный запрос, файл или плагин может выполнить произвольные команды и изменить или похитить ваши данные без какого-либо подтверждения.",
   "skip_permissions.root_warn":

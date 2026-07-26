@@ -3,7 +3,7 @@ import { Flag } from "@/flag/flag"
 export function serverAuthHeader(credentials?: { password?: string; username?: string }): string | undefined {
   const password = credentials?.password ?? Flag.MIMOCODE_SERVER_PASSWORD
   if (!password) return undefined
-  const username = credentials?.username ?? Flag.MIMOCODE_SERVER_USERNAME ?? "mimocode"
+  const username = credentials?.username ?? Flag.MIMOCODE_SERVER_USERNAME ?? "agenthosting"
   return `Basic ${Buffer.from(`${username}:${password}`).toString("base64")}`
 }
 
