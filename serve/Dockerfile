@@ -28,7 +28,9 @@ WORKDIR /app
 
 COPY --from=builder /app/serve/ ./
 COPY --from=builder /releases/ ./releases/
-RUN mkdir -p public && cp serve/install public/install 2>/dev/null; cp serve/install.ps1 public/install.ps1 2>/dev/null; true
+RUN mkdir -p public && \
+    cp install public/install && \
+    cp install.ps1 public/install.ps1
 
 EXPOSE 3000
 

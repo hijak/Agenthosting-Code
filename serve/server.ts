@@ -50,12 +50,15 @@ serve({
       })
     }
 
-    // Proxy everything else to the main site
-    const targetUrl = `${PROXY_TARGET}${req.url.substring(url.origin.length)}`
+    // Proxy everything else to the main site. Do not forward the public code
+    // hostname as Host, otherwise Cloudflare routes the request back here.
+    const targetUrl = new URL(`${url.pathname}${url.search}`, PROXY_TARGET)
+    const proxyHeaders = new Headers(req.headers)
+    proxyHeaders.set("host", targetUrl.host)
     try {
       const proxyRes = await fetch(targetUrl, {
         method: req.method,
-        headers: req.headers,
+        headers: proxyHeaders,
         body: req.body,
         redirect: "manual",
       })
