@@ -76,8 +76,8 @@ else
       *) echo -e "${RED}Unsupported OS/Arch: $os/$arch${NC}"; exit 1 ;;
     esac
 
-    archive_ext=".zip"
-    if [ "$os" = "linux" ]; then archive_ext=".tar.gz"; fi
+    archive_ext=".tar.gz"
+    if [ "$os" = "windows" ]; then archive_ext=".zip"; fi
 
     is_musl=false
     if [ "$os" = "linux" ]; then
@@ -102,12 +102,12 @@ else
 
     filename="$APP-$target$archive_ext"
 
-    if [ "$os" = "linux" ]; then
-        if ! command -v tar >/dev/null 2>&1; then
-             echo -e "${RED}Error: 'tar' is required but not installed.${NC}"; exit 1; fi
-    else
+    if [ "$os" = "windows" ]; then
         if ! command -v unzip >/dev/null 2>&1; then
             echo -e "${RED}Error: 'unzip' is required but not installed.${NC}"; exit 1; fi
+    else
+        if ! command -v tar >/dev/null 2>&1; then
+             echo -e "${RED}Error: 'tar' is required but not installed.${NC}"; exit 1; fi
     fi
 
     base_url="${AH_RELEASE_BASE:-https://code.agenthosting.app/releases}"
@@ -156,12 +156,11 @@ download_and_install() {
     local tmp_dir="${TMPDIR:-/tmp}/ah_install_$$"
     mkdir -p "$tmp_dir"
 
-    if [ "$os" = "linux" ]; then
-        curl -# -L -o "$tmp_dir/$filename" "$url"
-        tar -xzf "$tmp_dir/$filename" -C "$tmp_dir"
-    else
-        curl -# -L -o "$tmp_dir/$filename" "$url"
+    curl -# -L -o "$tmp_dir/$filename" "$url"
+    if [ "$os" = "windows" ]; then
         unzip -q "$tmp_dir/$filename" -d "$tmp_dir"
+    else
+        tar -xzf "$tmp_dir/$filename" -C "$tmp_dir"
     fi
 
     mv "$tmp_dir/ah" "$INSTALL_DIR"

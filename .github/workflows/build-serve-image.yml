@@ -1,0 +1,126 @@
+name: build binaries and serve image
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  IMAGE_NAME: ghcr.io/hijak/agenthosting-code
+
+jobs:
+  binaries:
+    name: Build release binaries
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Bun
+        uses: ./.github/actions/setup-bun
+
+      - name: Resolve build version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+          package_version="$(node -p "require('./packages/opencode/package.json').version")"
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            version="${GITHUB_REF_NAME#v}"
+            if [[ "$version" != "$package_version" ]]; then
+              echo "Tag v$version does not match package version $package_version" >&2
+              exit 1
+            fi
+          else
+            version="$package_version"
+          fi
+          echo "version=$version" | tee -a "$GITHUB_OUTPUT"
+
+      - name: Build every supported binary target
+        env:
+          MIMOCODE_CHANNEL: latest
+          MIMOCODE_VERSION: ${{ steps.version.outputs.version }}
+        run: bun run packages/opencode/script/build.ts
+
+      - name: Package AgentHosting release artifacts
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: ./serve/package-releases.sh
+
+      - name: Verify release manifest
+        run: |
+          set -euo pipefail
+          test "$(find releases/v${{ steps.version.outputs.version }} -maxdepth 1 -type f | wc -l | tr -d ' ')" -eq 12
+          test "$(cat releases/latest)" = "${{ steps.version.outputs.version }}"
+          cat releases/manifest.txt
+
+      - name: Upload release artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: agenthosting-cli-releases
+          path: releases/
+          if-no-files-found: error
+          retention-days: 30
+
+  image:
+    name: Publish serve image
+    needs: binaries
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Download release artifacts
+        uses: actions/download-artifact@v7
+        with:
+          name: agenthosting-cli-releases
+          path: releases
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+            type=raw,value=${{ needs.binaries.outputs.version }}
+            type=sha,prefix=sha-
+
+      - name: Build and publish multi-architecture serve image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: serve/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: mode=max
+          sbom: true
+

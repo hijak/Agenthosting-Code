@@ -32,7 +32,8 @@ serve({
 
     // Serve release files
     if (path.startsWith("/releases/")) {
-      const filePath = `${RELEASES_DIR}${path}`
+      const releasePath = path.slice("/releases".length)
+      const filePath = `${RELEASES_DIR}${releasePath}`
       const file = Bun.file(filePath)
       if (await file.exists()) {
         const ext = path.endsWith(".tar.gz") ? "application/gzip" : path.endsWith(".zip") ? "application/zip" : "text/plain"
