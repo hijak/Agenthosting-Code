@@ -1,0 +1,29 @@
+services:
+  code-agenthosting-app:
+    build:
+      context: ..
+      dockerfile: serve/Dockerfile
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - PORT=3000
+      - PROXY_TARGET=https://agenthosting.app
+      - RELEASES_DIR=./releases
+    volumes:
+      # Mount release archives (populated by CI or manual upload)
+      - releases_data:/app/releases
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.code-agenthosting.rule=Host(`code.agenthosting.app`)"
+      - "traefik.http.routers.code-agenthosting.entrypoints=websecure"
+      - "traefik.http.routers.code-agenthosting.tls.certresolver=letsencrypt"
+      - "traefik.http.services.code-agenthosting.loadbalancer.server.port=3000"
+
+volumes:
+  releases_data:
