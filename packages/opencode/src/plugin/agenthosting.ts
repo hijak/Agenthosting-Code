@@ -33,7 +33,7 @@ function browserOAuth() {
     const addr = server.address()
     const port = typeof addr === "object" && addr ? addr.port : 0
     const redirectUri = `http://localhost:${port}/callback`
-    const authUrl = `${process.env.AGENTHOSTING_API_URL || "https://api.agenthosting.app"}/api/cli/authorize?redirect_uri=${encodeURIComponent(redirectUri)}`
+    const authUrl = `${PLATFORM_URL}/cli-authorize?redirect_uri=${encodeURIComponent(redirectUri)}`
     log.info("starting browser oauth", { port })
     openBrowser(authUrl)
 
@@ -130,7 +130,7 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
           authorize: async () => {
             const pending = browserOAuth()
             return {
-              url: `${process.env.AGENTHOSTING_API_URL || "https://api.agenthosting.app"}/api/cli/authorize?redirect_uri=http://localhost:0/callback`,
+              url: `${PLATFORM_URL}/cli-authorize`,
               method: "auto" as const,
               instructions: "Opening browser to authorize. The token will be received automatically.",
               callback: async () => {
@@ -149,7 +149,7 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
           type: "oauth" as const,
           authorize: async () => {
             return {
-              url: `${process.env.AGENTHOSTING_API_URL || "https://api.agenthosting.app"}/api/cli/authorize`,
+              url: `${PLATFORM_URL}/cli-authorize`,
               method: "code" as const,
               instructions: "Open the URL in your browser, sign in, then paste the token shown on the page.",
               callback: async (code?: string) => {
