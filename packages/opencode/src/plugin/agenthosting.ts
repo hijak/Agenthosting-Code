@@ -125,14 +125,14 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
       },
       methods: [
         {
-          label: "Browser login to agenthosting.app",
+          label: "Browser login (opens automatically)",
           type: "oauth" as const,
           authorize: async () => {
             const pending = browserOAuth()
             return {
-              url: `${PLATFORM_URL}/dashboard`,
+              url: `${PLATFORM_URL}/api/cli/authorize?redirect_uri=http://localhost:0/callback`,
               method: "auto" as const,
-              instructions: "Complete authorization in your browser.",
+              instructions: "Opening browser to authorize. The token will be received automatically.",
               callback: async () => {
                 const result = await pending
                 if ("error" in result) {
@@ -140,6 +140,21 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
                   return { type: "failed" as const }
                 }
                 return { type: "success" as const, key: result.token }
+              },
+            }
+          },
+        },
+        {
+          label: "Paste token from browser (for SSH / remote)",
+          type: "oauth" as const,
+          authorize: async () => {
+            return {
+              url: `${PLATFORM_URL}/api/cli/authorize`,
+              method: "code" as const,
+              instructions: "Open the URL in your browser, sign in, then paste the token shown on the page.",
+              callback: async (code?: string) => {
+                if (!code?.trim()) return { type: "failed" as const }
+                return { type: "success" as const, key: code.trim() }
               },
             }
           },
