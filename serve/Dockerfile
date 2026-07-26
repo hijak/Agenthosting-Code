@@ -3,9 +3,9 @@ FROM oven/bun:1 AS builder
 WORKDIR /app
 
 COPY package.json bun.lock ./
+COPY packages/ packages/
 RUN bun ci
 
-COPY packages/ packages/
 COPY serve/ serve/
 
 # Build the CLI binary for linux-x64
