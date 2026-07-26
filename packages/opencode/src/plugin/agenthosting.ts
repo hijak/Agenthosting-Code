@@ -110,7 +110,6 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
             },
             cost: { input: 0, output: 0 },
             limit: { context: 200000, output: 16384 },
-            status: "active",
           },
         },
       }
@@ -171,7 +170,7 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
               },
               cost: { input: 0, output: 0, cache: { read: 0, write: 0 } },
               limit: { context: 200000, output: 16384 },
-              status: "active",
+              status: undefined,
               options: {},
               headers: {},
             },
@@ -201,7 +200,7 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
             },
             cost: { input: 0, output: 0, cache: { read: 0, write: 0 } },
             limit: { context: 200000, output: 16384 },
-            status: "active",
+            status: undefined,
             options: {},
             headers: {},
           }
@@ -223,7 +222,7 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
             },
             cost: { input: 0, output: 0, cache: { read: 0, write: 0 } },
             limit: { context: 200000, output: 16384 },
-            status: "active",
+            status: undefined,
             options: {},
             headers: {},
           }
