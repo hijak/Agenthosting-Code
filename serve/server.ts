@@ -50,30 +50,9 @@ serve({
       })
     }
 
-    // Proxy everything else to the main site. Do not forward the public code
-    // hostname as Host, otherwise Cloudflare routes the request back here.
+    // Redirect everything else to the canonical main site rather than
+    // rendering it through the code hostname.
     const targetUrl = new URL(`${url.pathname}${url.search}`, PROXY_TARGET)
-    const proxyHeaders = new Headers(req.headers)
-    proxyHeaders.set("host", targetUrl.host)
-    try {
-      const proxyRes = await fetch(targetUrl, {
-        method: req.method,
-        headers: proxyHeaders,
-        body: req.body,
-        redirect: "manual",
-      })
-      const headers = new Headers(proxyRes.headers)
-      headers.delete("transfer-encoding")
-      return new Response(proxyRes.body, {
-        status: proxyRes.status,
-        statusText: proxyRes.statusText,
-        headers,
-      })
-    } catch {
-      return new Response("Service temporarily unavailable", {
-        status: 502,
-        headers: { "content-type": "text/plain" },
-      })
-    }
+    return Response.redirect(targetUrl, 302)
   },
 })
