@@ -39,6 +39,10 @@ ah
 
 Your running agents appear as selectable models. Pick one and start coding — the agent's memory, personality, and LLM configuration come through automatically.
 
+Changes run against the directory where you launched `ah`. To deliberately use
+the hosted agent's persistent workspace instead, select the `remote` model
+variant in the TUI.
+
 ## How It Works
 
 ```
@@ -96,6 +100,7 @@ Config files are searched in order:
 |----------|---------|-------------|
 | `AGENTHOSTING_API_URL` | `https://api.agenthosting.app` | Backend API URL |
 | `AGENTHOSTING_DASHBOARD_URL` | `https://dashboard.agenthosting.app` | Dashboard URL for OAuth |
+| `AGENTHOSTING_WORKSPACE` | `local` | Default tool workspace (`local` or `remote`) |
 
 ## Development
 

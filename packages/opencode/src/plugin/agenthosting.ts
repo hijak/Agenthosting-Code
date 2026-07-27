@@ -9,6 +9,16 @@ const PLATFORM_URL = process.env.AGENTHOSTING_DASHBOARD_URL || "https://dashboar
 const API_BASE = `${process.env.AGENTHOSTING_API_URL || "https://api.agenthosting.app"}/api/cli`
 const PROVIDER_ID = "agenthosting"
 
+export function agentHostingWorkspace(variant?: string, configured = process.env.AGENTHOSTING_WORKSPACE) {
+  if (variant === "remote") return "remote"
+  return configured?.trim().toLowerCase() === "remote" ? "remote" : "local"
+}
+
+function modelVariant(model: object) {
+  if (!("variant" in model)) return
+  return typeof model.variant === "string" ? model.variant : undefined
+}
+
 function openBrowser(url: string) {
   if (process.env.CI || process.env.NODE_ENV === "test") return
   const command =
@@ -220,6 +230,7 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
             status: undefined,
             options: {},
             headers: {},
+            variants: { remote: {} },
           }
         }
         if (Object.keys(models).length === 0) {
@@ -250,6 +261,7 @@ export async function AgentHostingAuthPlugin(_input: PluginInput): Promise<Hooks
     "chat.headers": async (input, output) => {
       if (input.model.providerID !== PROVIDER_ID) return
       output.headers["X-AgentHosting-Source"] = "cli"
+      output.headers["X-AgentHosting-Workspace"] = agentHostingWorkspace(modelVariant(input.message.model))
     },
   }
 }
