@@ -10,12 +10,12 @@ AgentHosting CLI brings your hosted agents into your local development workflow.
 
 **macOS / Linux:**
 ```bash
-curl -fsSL https://agenthosting.app/install | bash
+curl -fsSL https://code.agenthosting.app/install | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
-irm https://agenthosting.app/install.ps1 | iex
+irm https://code.agenthosting.app/install.ps1 | iex
 ```
 
 **npm:**
